@@ -2,48 +2,50 @@
 
 ## Overview
 
-_**Lend A Hand** is and app for everyone. With the current political climate, it's easy to feel overwhelmed with wanting to be involved and show support and love to others. Lend A Hand is here to help! This is a one-stop-shop for all of the causes that YOU specificly care about. On this app you can save as many or as few resources to your profile and you can check in daily on what's going on in your community. _
-
+**Lend A Hand** is and app for everyone. With the current political climate, it's easy to feel overwhelmed with wanting to be involved and show support and love to others. Lend A Hand is here to help! This is a one-stop-shop for all of the causes that YOU specificly care about. On this app you can save as many or as few resources to your profile and you can check in daily on what's going on in your community. 
 
 <br>
+## MVP/Post MVP
 
 ## MVP
 
-> The Minimum Viable Product should be a well-planned, easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
+- Create and use external api.
+- Create clickable buttons for user to choose causes they would like to know more about.
+- Render data on dashboard page.
+- Allow user to create events and share relavent resources.
+- Allow user to update listed events and delete past events.
 
-_The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
+## Post MVP
 
-<br>
+- Provide more options and resources for causes.
+- Add a connection option so people can connect with other people that support similar causes.
+- Add a calendar tracker so the user can keep track of events with a quick overview.
+
 
 ### Goals
 
-- _Lorem ipsum, dolor sit amet,_
-- _consectetur adipiscing elit._
-- _Phasellus dapibus fermentum risus vitae bibendum._
-- _Integer vel ipsum mollis odio sollicitudin ornare eu vel ex._
-- _etc._
+- I'd really like to use modals for this app if I have enough time.
+- 
+- 
+- 
+- 
 
-<br>
 
 ### Libraries and Dependencies
 
-> Use this section to list all supporting libraries and dependencies, and their role in the project. Below is an example - this needs to be replaced!
 
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+|      React       | I will be using React for my app. This will house all of my components for my app.|
+|   React Router   | React Router will be used to switch from component to component. |
+| Ruby on Rails | I will be using Ruby on Rails for my backend. This  |
+|  Fontawesome  | I will use Fontawesome for all of my icons. |
 
 <br>
 
 ### Client (Front End)
 
 #### Wireframes
-
-> Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
 
 ![Dummy Link](url)
 
@@ -71,11 +73,18 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 
 #### Component Tree
 
-> Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. 
+
+			  App.js
+			/       \
+		   App.css   Components
+			      /  | | | |  \
+			 Home	   | | | |	Services
+			    Layout | | Create
+				     | Edit
+				Dashboard
 
 #### Component Hierarchy
 
-> Use this section to define your React components and the data architecture of your app. This should be a reflection of how you expect your directory/file tree to look like. 
 
 ``` structure
 
@@ -84,24 +93,38 @@ src
       |__ fonts
       |__ graphics
       |__ images
-      |__ mockups
+      |__ icons
 |__ components/
-      |__ Header.jsx
+      |__ Layout
+            |__ Layout.jsx
+            |__ Header.jsx
+            |__ Footer.jsx
+      |__ Screens
+            |__ Home.jsx
+            |__ CausesDashboard.jsx
+            |__ EventCard.jsx
+            |__ Create.jsx
+            |__ Edit.jsx
+      |__ Shared
+            |__ BackButton.jsx
 |__ services/
+      |__ ApiConfig.js
+      |__ Causes.js
 
 ```
 
 #### Component Breakdown
 
-> Use this section to go into further depth regarding your components, including breaking down the components as stateless or stateful, and considering the passing of data between those components.
-
 |  Component   |    Type    | state | props | Description                                                      |
 | :----------: | :--------: | :---: | :---: | :--------------------------------------------------------------- |
-|    Header    | functional |   n   |   n   | _The header will contain the navigation and logo._               |
-|  Navigation  | functional |   n   |   n   | _The navigation will provide a link to each of the pages._       |
-|   Gallery    |   class    |   y   |   n   | _The gallery will render the posts using cards in flexbox._      |
-| Gallery Card | functional |   n   |   y   | _The cards will render the post info via props._                 |
-|    Footer    | functional |   n   |   n   | _The footer will show info about me and a link to my portfolio._ |
+|    Header    | functional |   n   |   n   | The header will contain the navigation and logo.              |
+|  Navigation  | functional |   n   |   n   | The navigation will provide a link to each of the pages.      |
+|  Home        | functional |   n   |   n   | The home page will provide user login or access straight  to events. |
+|   Dashboard    |   class    |   y   |   n   | The dashboard will render current events using cards in flexbox.      |
+| Event Card | functional |   n   |   y   | The event card will render the post info via props.                 |
+| Create   | functional   |   n   |   n   | The create page will create a new volunteer event to add to the dashboard page. |
+| Edit    | functional   |  y    |   y   | The edit page will update an event via props. |
+|    Footer    | functional |   n   |   n   | The footer will only have a home button for access as there isn't a lot of specific info needed. |
 
 #### Time Estimates
 
@@ -109,11 +132,14 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
+| Build Backend       |    H     |     15 hrs     |       hrs     |      hrs    |
+| Create App & Components | H    |     10 hrs     |       hrs     |      hrs    |
+| Connect Frontend & Backend | H |     8 hrs      |       hrs     |      hrs    |
+| CRUD Actions        |    H     |     10 hrs     |       hrs     |      hrs    |
+| CSS & Flexbox       |    H     |     15 hrs     |       hrs     |      hrs    | 
+| Media Queries       |    H     |     10 hrs     |       hrs     |      hrs    |
+| TOTAL               |          |     68 hrs     |       hrs     |     hrs     |
 
-> _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
 
 <br>
 
