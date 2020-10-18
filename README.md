@@ -150,13 +150,10 @@ src
 > Use this section to display an image of a computer generated ERD model. You can use draw.io, Lucidchart or another ERD tool.
 
 
-***
-
 ## Post-MVP
 
 > Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
 
-***
 
 ## Code Showcase
 
