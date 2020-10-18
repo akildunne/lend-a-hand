@@ -45,7 +45,7 @@
 
 ### Client (Front End)
 
-#### Wireframes
+### Wireframes
 
 ![Dummy Link](url)
 
@@ -71,7 +71,7 @@
 
 - Mobile Resource Index
 
-#### Component Tree
+### Component Tree
 
 
 			  App.js
@@ -83,7 +83,7 @@
 				     | Edit
 				Dashboard
 
-#### Component Hierarchy
+### Component Hierarchy
 
 
 ``` structure
@@ -113,7 +113,7 @@ src
 
 ```
 
-#### Component Breakdown
+### Component Breakdown
 
 |  Component   |    Type    | state | props | Description                                                      |
 | :----------: | :--------: | :---: | :---: | :--------------------------------------------------------------- |
@@ -126,9 +126,9 @@ src
 | Edit    | functional   |  y    |   y   | The edit page will update an event via props. |
 |    Footer    | functional |   n   |   n   | The footer will only have a home button for access as there isn't a lot of specific info needed. |
 
-#### Time Estimates
+### Time Estimates
 
-> Use this section to estimate the time necessary to build out each of the components you've described above.
+
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
@@ -145,11 +145,10 @@ src
 
 ### Server (Back End)
 
-#### ERD Model
+### ERD Model
 
 > Use this section to display an image of a computer generated ERD model. You can use draw.io, Lucidchart or another ERD tool.
 
-<br>
 
 ***
 
