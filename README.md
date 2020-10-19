@@ -8,7 +8,7 @@
 
 ## MVP
 
-- Create and use external api.
+- Create and use api.
 - Create clickable buttons for user to choose causes they would like to know more about.
 - Render data on dashboard page.
 - Allow user to create events and share relavent resources.
