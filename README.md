@@ -48,27 +48,27 @@
 
 ![Dummy Link](url)
 
-- Desktop Landing
+- Mobile - Home
 
 ![Dummy Link](url)
 
-- Desktop Hero
+- Mobile - Sign In
 
 ![Dummy Link](url)
 
-- Resource Index
+- Mobile - Events
 
 ![Dummy Link](url)
 
-- Resource Show
+- Mobile - Event
 
 ![Dummy Link](url)
 
-- Tablet Resource Index
+- Mobile - Create
 
 ![Dummy Link](url)
 
-- Mobile Resource Index
+- Mobile - Edit
 
 ### Component Tree
 
