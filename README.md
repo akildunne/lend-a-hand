@@ -10,9 +10,8 @@
 
 - Create and use api.
 - Create clickable buttons for user to choose causes they would like to know more about.
-- Render data on dashboard page.
-- Allow user to create events and share relavent resources.
-- Allow user to update listed events and delete past events.
+- Allow admin user to create events and share relavent resources for their specific organization.
+- Allow admin user to update listed events and delete past events.
 
 ## Post MVP
 
@@ -20,15 +19,12 @@
 - Add a favorites for users to have taylored dashboards. 
 - Add a connection option so people can connect with other people that support similar causes.
 - Add a calendar tracker so the user can keep track of events with a quick overview.
+- Render data on dashboard page.
 
 
 ### Goals
 
 - I'd really like to use modals for this app if I have enough time.
-- 
-- 
-- 
-- 
 
 
 ### Libraries and Dependencies
@@ -39,6 +35,7 @@
 |      React       | I will be using React for my app. This will house all of my components for my app.|
 |   React Router   | React Router will be used to switch from component to component. |
 | Ruby on Rails | I will be using Ruby on Rails for my backend. This  |
+| Axios   |                        |
 |  Fontawesome  | I will use Fontawesome for all of my icons. |
 
 <br>
