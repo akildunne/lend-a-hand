@@ -17,6 +17,7 @@
 ## Post MVP
 
 - Provide more options and resources for causes.
+- Add a favorites for users to have taylored dashboards. 
 - Add a connection option so people can connect with other people that support similar causes.
 - Add a calendar tracker so the user can keep track of events with a quick overview.
 
