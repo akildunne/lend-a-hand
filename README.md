@@ -48,26 +48,15 @@
 
 - Mobile - Home : https://i.imgur.com/PHW8Vld.png
 
+- Mobile - Sign In : https://i.imgur.com/R48Wlyo.png
 
-![Dummy Link](url)
+- Mobile - Events : https://i.imgur.com/aT23ILc.png
 
-- Mobile - Sign In
+- Mobile - Event : https://i.imgur.com/fUj6ZeP.png
 
-![Dummy Link](url)
+- Mobile - Create : https://i.imgur.com/5Lj0mtj.png
 
-- Mobile - Events
-
-![Dummy Link](url)
-
-- Mobile - Event
-
-![Dummy Link](url)
-
-- Mobile - Create
-
-![Dummy Link](url)
-
-- Mobile - Edit
+- Mobile - Edit : https://i.imgur.com/5Lj0mtj.png
 
 ### Component Tree
 
