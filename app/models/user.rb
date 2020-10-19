@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_secure_password 
-  has_many :causes
+  has_many :events
+  belongs_to :cause
 
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
