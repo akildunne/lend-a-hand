@@ -72,6 +72,8 @@
 
 ### Component Tree
 
+https://whimsical.com/2CrZwa5D6QXyvykwZUKQHW
+
 
 			  App.js
 			/       \
