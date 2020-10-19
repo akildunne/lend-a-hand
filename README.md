@@ -46,9 +46,8 @@
 
 ### Wireframes
 
-![Dummy Link](url)
+- Mobile - Home : https://i.imgur.com/PHW8Vld.png
 
-- Mobile - Home
 
 ![Dummy Link](url)
 
