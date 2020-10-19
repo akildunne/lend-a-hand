@@ -5,7 +5,6 @@
 **Lend A Hand** is and app for everyone. With the current political climate, it's easy to feel overwhelmed with wanting to be involved and show support and love to others. Lend A Hand is here to help! This is a one-stop-shop for all of the causes that YOU specificly care about. On this app you can save as many or as few resources to your profile and you can check in daily on what's going on in your community. 
 
 <br>
-## MVP/Post MVP
 
 ## MVP
 
