@@ -1,5 +1,5 @@
 class CausesController < ApplicationController
-  # before_action :set_cause, only: [:show, :update, :destroy]
+  before_action :set_cause, only: [:show, :update, :destroy]
 
   # GET /causes
   def index
