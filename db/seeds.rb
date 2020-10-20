@@ -6,15 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
 Cause.destroy_all
 Event.destroy_all
-User.destroy_all
 
 @user = User.create!(username: 'admin', email: 'admin@email.com', password: '123456')
 puts "#{User.count} users created"
 
-@unity_march = Event.create!(name: 'Unity March', reason: 'Support in San Jose', location: 'SAP Center, San Jose', age_group: 18)
+@blm = Cause.create!(name: 'BLM', user: @user)
+puts "#{Cause.count} causes created"
+
+@unity_march = Event.create!(name: 'Unity March', reason: 'Support in San Jose', location: 'SAP Center, San Jose', age_group: 18, cause: @blm, user: @user)
 puts "#{Event.count} events created"
 
-@blm = Cause.create!(name: 'BLM')
-puts "#{Cause.count} causes created"
+

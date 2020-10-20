@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_19_164735) do
+ActiveRecord::Schema.define(version: 2020_10_20_001531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,17 +19,19 @@ ActiveRecord::Schema.define(version: 2020_10_19_164735) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_causes_on_user_id"
   end
 
   create_table "events", force: :cascade do |t|
     t.string "name"
-    t.string "cause"
     t.string "reason"
     t.string "location"
-    t.datetime "date_time"
     t.integer "age_group"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "cause_id", null: false
+    t.bigint "user_id", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,4 +42,7 @@ ActiveRecord::Schema.define(version: 2020_10_19_164735) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "causes", "users"
+  add_foreign_key "events", "causes"
+  add_foreign_key "events", "users"
 end
