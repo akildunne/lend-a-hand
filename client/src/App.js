@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+import './App.css';
 // import Layout from './layout/Layout';
 import Login from "./components/screens/Login";
 import Register from "./components/screens/Register";
 import Home from "./components/screens/Home";
+import EventDashboard from "./components/screens/EventDashboard";
+import EventCard from "./components/screens/EventCard";
 import {
   loginUser,
   registerUser,
@@ -54,9 +57,10 @@ function App() {
       <Route exact path="/register">
         <Register handleRegister={handleRegister} />
       </Route>
-      {/* <Route exact path="/create" component={Create} />
-      <Route exact path="/events/edit:id" component={Edit} />
-      <Route exact path="/events/:id" component={EventCard} /> */}
+      <Route exact path="/causes/:id" component={EventDashboard}/>
+      {/* <Route exact path="/create" component={Create} /> */}
+      {/* <Route exact path="/events/edit:id" component={Edit} /> */}
+      <Route exact path="/events/:id" component={EventCard} />
     </Switch>
 
     // {/* </Layout> */}
