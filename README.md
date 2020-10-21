@@ -88,6 +88,8 @@ src
             |__ Footer.jsx
       |__ Screens
             |__ Home.jsx
+	    |__ Register.jsx
+	    |__ Login.jsx
             |__ EventsDashboard.jsx
             |__ EventCard.jsx
             |__ Create.jsx
@@ -95,8 +97,10 @@ src
       |__ Shared
             |__ BackButton.jsx
 |__ services/
-      |__ ApiConfig.js
-      |__ Causes.js
+      |__ api-config.js
+      |__ auth.js
+      |__ events.js
+      |__ causes.js
 
 ```
 
