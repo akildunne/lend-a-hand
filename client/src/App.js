@@ -1,11 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 // import Layout from './layout/Layout';
-import Login from './components/screens/Login';
-import Register from './components/screens/Register';
-import Home from './components/screens/Home';
-import { loginUser, registerUser, removeToken, verifyUser } from './services/auth';
-import { Route, useHistory, Switch } from 'react-router-dom';
-
+import Login from "./components/screens/Login";
+import Register from "./components/screens/Register";
+import Home from "./components/screens/Home";
+import {
+  loginUser,
+  registerUser,
+  removeToken,
+  verifyUser,
+} from "./services/auth";
+import { Route, Switch, useHistory } from "react-router-dom";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -14,45 +18,46 @@ function App() {
   useEffect(() => {
     const handleVerify = async () => {
       const userData = await verifyUser();
-      setCurrentUser(userData)
-    }
+      setCurrentUser(userData);
+    };
     handleVerify();
-  }, [])
+  }, []);
 
   const handleLogin = async (loginData) => {
     const userData = await loginUser(loginData);
     setCurrentUser(userData);
-    history.push('/')
-  }
+    history.push("/");
+  };
 
   const handleRegister = async (registerData) => {
     const userData = await registerUser(registerData);
     setCurrentUser(userData);
-    history.push('/')
-  }
+    history.push("/");
+  };
 
   const handleLogout = () => {
     setCurrentUser(null);
-    localStorage.removeItem('authToken');
+    localStorage.removeItem("authToken");
     removeToken();
-  }
+  };
 
   return (
     // <Layout
-      // currentUser={currentUser}
-      // handleLogout={handleLogout}
+    // currentUser={currentUser}
+    // handleLogout={handleLogout}
     // >
-      <Switch>
-        <Route path='/login'>
-          <Login handleLogin={handleLogin} />
-        </Route>
-        <Route path='/register'>
-          <Register handleRegister={handleRegister} />
-        </Route>
-        <Route path='/'>
-          <Home />
-        </Route>
-      </Switch>
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/login">
+        <Login handleLogin={handleLogin} />
+      </Route>
+      <Route exact path="/register">
+        <Register handleRegister={handleRegister} />
+      </Route>
+      {/* <Route exact path="/create" component={Create} />
+      <Route exact path="/events/edit:id" component={Edit} />
+      <Route exact path="/events/:id" component={EventCard} /> */}
+    </Switch>
 
     // {/* </Layout> */}
   );

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
+import { Switch, Link } from "react-router-dom";
 import { getAllCauses } from "../../services/causes";
 
 export default function Home() {
@@ -16,14 +16,19 @@ export default function Home() {
 
   return (
     <div>
-      <h3>Organizations to Support</h3>
-      {allCauses.map(cause => (
-        <div key={cause.id}>
-          <Link to={`/causes/${cause.id}`}>
-            <p>{cause.name}</p>
-          </Link>
-        </div> 
-      ))}
+      <Link to="/login">
+        <div>Login</div>
+      </Link>
+      <div>
+        <h3>Organizations to Support</h3>
+        {allCauses.map((cause) => (
+          <div key={cause.id}>
+            <Link to={`/causes/${cause.id}`}>
+              <p>{cause.name}</p>
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
