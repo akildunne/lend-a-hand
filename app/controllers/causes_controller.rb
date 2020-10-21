@@ -1,5 +1,5 @@
 class CausesController < ApplicationController
-  before_action :set_cause, only: [:show, :update, :destroy]
+  # before_action :set_cause, only: [:show, :update, :destroy]
 
   # GET /causes
   def index
@@ -44,8 +44,8 @@ class CausesController < ApplicationController
   #     @cause = Cause.find(params[:id])
   #   end
 
-  #   # Only allow a trusted parameter "white list" through.
-  #   def cause_params
-  #     params.require(:cause).permit(:name)
-  #   end
+    # Only allow a trusted parameter "white list" through.
+    # def cause_params
+    #   params.require(:cause).permit(:name)
+    # end
 end
