@@ -1,5 +1,5 @@
 class CausesController < ApplicationController
-  before_action :set_cause, only: [:show, :update, :destroy]
+  # before_action :set_cause, only: [:show, :update, :destroy]
 
   # GET /causes
   def index
@@ -13,16 +13,16 @@ class CausesController < ApplicationController
   #   render json: @cause
   # end
 
-  # # POST /causes
-  # def create
-  #   @cause = Cause.new(cause_params)
+  # POST /causes
+  def create
+    @cause = Cause.new(cause_params)
 
-  #   if @cause.save
-  #     render json: @cause, status: :created, location: @cause
-  #   else
-  #     render json: @cause.errors, status: :unprocessable_entity
-  #   end
-  # end
+    if @cause.save
+      render json: @cause, status: :created, location: @cause
+    else
+      render json: @cause.errors, status: :unprocessable_entity
+    end
+  end
 
   # # PATCH/PUT /causes/1
   # def update
@@ -44,8 +44,8 @@ class CausesController < ApplicationController
   #     @cause = Cause.find(params[:id])
   #   end
 
-  #   # Only allow a trusted parameter "white list" through.
-  #   def cause_params
-  #     params.require(:cause).permit(:name)
-  #   end
+    # Only allow a trusted parameter "white list" through.
+    # def cause_params
+    #   params.require(:cause).permit(:name)
+    # end
 end
