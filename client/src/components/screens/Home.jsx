@@ -2,11 +2,10 @@ import React from 'react';
 
 
 export default function Home() {
-  
+ 
   return (
-    <div className="Home">
-     <h1>Hello World</h1>
-    
+    <div>
+      <h3>Organizations to Support</h3>
     </div>
   )
 }
