@@ -88,7 +88,7 @@ src
             |__ Footer.jsx
       |__ Screens
             |__ Home.jsx
-            |__ CausesDashboard.jsx
+            |__ EventsDashboard.jsx
             |__ EventCard.jsx
             |__ Create.jsx
             |__ Edit.jsx
