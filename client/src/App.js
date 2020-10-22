@@ -14,16 +14,21 @@ import {
   removeToken,
   verifyUser,
 } from "./services/auth";
+import { getUserCause } from './services/causes';
 import { Route, Switch, useHistory } from "react-router-dom";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
+  const [userCause, setUserCause] = useState(null);
   const history = useHistory();
 
   useEffect(() => {
     const handleVerify = async () => {
       const userData = await verifyUser();
       setCurrentUser(userData);
+      const cause = await getUserCause();
+      console.log(cause)
+      setUserCause(cause)
     };
     handleVerify();
   }, []);
@@ -60,7 +65,9 @@ function App() {
         <Register handleRegister={handleRegister} />
       </Route>
       <Route exact path="/causes/:id" component={EventDashboard}/>
-      <Route exact path="/create" component={Create} />
+      <Route exact path="/create">
+        <Create currentUser={currentUser} userCause={userCause} />
+      </Route>
       <Route exact path="/events/edit:id" component={Edit} />
       <Route exact path="/events/:id" component={EventCard} />
     </Switch>

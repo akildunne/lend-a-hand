@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   post '/auth/login', to: 'authentication#login'
   get '/auth/verify', to: 'authentication#verify'
+  get '/usercause', to: 'users#get_user_causes'
  
   resources :causes
   resources :users
