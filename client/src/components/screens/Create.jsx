@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import { postEvent } from "../../services/events";
 import { Redirect } from "react-router-dom";
 
-export default function Create() {
+export default function Create(props) {
   const [isCreated, setCreated] = useState(false);
   const [newEvent, setNewEvent] = useState({
     name: "",
     reason: "",
     location: "",
-    age_group: 0,
+    age_group: "",
   })
 
   const handleChange = (e) => {
@@ -24,7 +24,8 @@ export default function Create() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(newEvent)
-    const created = await postEvent(newEvent);
+    let createdEvent = {...newEvent, cause_id: props.userCause.id }
+    const created = await postEvent(createdEvent);
     setCreated({ created });
   }
   
@@ -66,7 +67,7 @@ export default function Create() {
       <label>
         Age Group:
         <input
-          type="number"
+          type="text"
           name='age_group'
           value={newEvent.age_group}
           onChange={handleChange}
