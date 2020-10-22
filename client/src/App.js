@@ -6,6 +6,8 @@ import Register from "./components/screens/Register";
 import Home from "./components/screens/Home";
 import EventDashboard from "./components/screens/EventDashboard";
 import EventCard from "./components/screens/EventCard";
+import Create from "./components/screens/Create";
+import Edit from "./components/screens/Edit";
 import {
   loginUser,
   registerUser,
@@ -58,8 +60,8 @@ function App() {
         <Register handleRegister={handleRegister} />
       </Route>
       <Route exact path="/causes/:id" component={EventDashboard}/>
-      {/* <Route exact path="/create" component={Create} /> */}
-      {/* <Route exact path="/events/edit:id" component={Edit} /> */}
+      <Route exact path="/create" component={Create} />
+      <Route exact path="/events/edit:id" component={Edit} />
       <Route exact path="/events/:id" component={EventCard} />
     </Switch>
 
