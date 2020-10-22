@@ -22,6 +22,7 @@ export default function Home(props) {
         {allCauses.map((cause) => (
           <div key={cause.id}>
             <Link to={`/causes/${cause.id}`}>
+              <img src={cause.image}></img>
               <p>{cause.name}</p>
             </Link>
           </div>

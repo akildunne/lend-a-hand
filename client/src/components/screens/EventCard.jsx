@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { getOneEvent } from "../../services/events";
+import { getOneEvent, destroyEvent } from "../../services/events";
 
 export default function EventCard() {
   // const [redirect, setRedirect] = useState(false);
   const [event, setEvent] = useState([]);
+  const [isDeleted, setIsDeleted] = useState(false);
 
   const { id } = useParams();
 
@@ -17,6 +18,11 @@ export default function EventCard() {
     fetchEvent();
   }, [id]);
 
+  const eventDeleted = async () => {
+    const deleted = await destroyEvent(id);
+    setIsDeleted(deleted);
+  };
+
   return (
     <div>
       <div>
@@ -25,9 +31,10 @@ export default function EventCard() {
         <p>{event.location}</p>
         <p>{event.age_group}+</p>
       </div>
-      <Link to={`/events/edit/:id`}>
+      <Link to={`/events/edit/${event.id}`}>
         <div>Edit</div>
       </Link>
+      {/* <button onClick=>Delete</button> */}
     </div>
   );
 }

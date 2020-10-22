@@ -17,7 +17,7 @@ export default function Edit(props) {
   useEffect(() => {
     const fetchEvent = async () => {
       const eventItem = await getOneEvent(id);
-      console.log(eventItem)
+      // console.log(eventItem)
       setEvent(eventItem);
     };
     fetchEvent();
@@ -36,7 +36,7 @@ export default function Edit(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     let { id } = props.match.params;
-    const updated = await putEvent(id, event);
+    const updated = await putEvent(id);
     setUpdated(updated);
   }
   
@@ -46,7 +46,7 @@ export default function Edit(props) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h3>Create Event</h3>
+      <h3>Edit Event</h3>
       <label>
         Name:
         <input
@@ -84,7 +84,7 @@ export default function Edit(props) {
           onChange={handleChange}
         />
       </label>
-      <button>Edit</button>
+      <button>Save</button>
     </form>
   )
 }
