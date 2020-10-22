@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getAllCauses } from "../../services/causes";
 
-export default function Home() {
+export default function Home(props) {
   // const [redirect, setRedirect] = useState(false);
   const [allCauses, setAllCauses] = useState([]);
 
@@ -16,10 +16,6 @@ export default function Home() {
 
   return (
     <div>
-      <h1>LEND A HAND <i class="fas fa-heart"></i> <i class="fas fa-hands"></i> </h1>
-      <Link to="/login">
-        <div>Login</div>
-      </Link>
       <div>
         <h3>Organizations to Support</h3>
         {allCauses.map((cause) => (
