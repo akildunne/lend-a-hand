@@ -1,5 +1,5 @@
 class CausesController < ApplicationController
-  # before_action :set_cause, only: [:show, :update, :destroy]
+  before_action :set_cause, only: [:show, :update, :destroy]
 
   # GET /causes
   def index
@@ -38,11 +38,11 @@ class CausesController < ApplicationController
   #   @cause.destroy
   # end
 
-  # private
-  #   # Use callbacks to share common setup or constraints between actions.
-  #   def set_cause
-  #     @cause = Cause.find(params[:id])
-  #   end
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_cause
+      @cause = Cause.find(params[:id])
+    end
 
     # Only allow a trusted parameter "white list" through.
     # def cause_params

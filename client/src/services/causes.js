@@ -11,6 +11,7 @@ export const getUserCause = async () => {
 }
 
 export const getOneCause = async (id) => {
+  console.log(id)
   const resp = await api.get(`/causes/${id}`);
   return resp.data;
 }

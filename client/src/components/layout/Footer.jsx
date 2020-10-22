@@ -4,6 +4,6 @@ import { Link } from 'react-router-dom';
 export default function Footer() {
   
   return (
-    <Link to='/'><i class="fas fa-home"></i></Link>
+    <Link to='/'><i className="fas fa-home"></i></Link>
   )
 }
