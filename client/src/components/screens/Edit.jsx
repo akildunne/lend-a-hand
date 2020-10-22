@@ -3,7 +3,7 @@ import { getOneEvent, putEvent } from "../../services/events";
 import { useParams, Redirect } from "react-router-dom";
 
 export default function Edit(props) {
-  const [redirect, setRedirect] = useState(false);
+  // const [redirect, setRedirect] = useState(false);
   const [event, setEvent] = useState({
     name: "",
     reason: "",

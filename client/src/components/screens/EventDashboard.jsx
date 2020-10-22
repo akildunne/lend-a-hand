@@ -6,20 +6,21 @@ export default function EventDashboard() {
   // const [redirect, setRedirect] = useState(false);
   const [causeById, setCauseById] = useState([]);
   let { id } = useParams();
+  console.log(id)
 
   useEffect(() => {
-    const fetchCauseEvents = async () => {
+    const fetchCauseEvents = async (id) => {
       const causeEvents = await getOneCause(id);
-      console.log(causeEvents)
       setCauseById(causeEvents);
     };
     fetchCauseEvents();
+    console.log(id)
   }, [id]);
 
   return (
     <div>
       <h3>Events</h3>
-      {causeById.map((event) => (
+      {causeById.length !== 0 && causeById.events.map((event) => (
         <div key={event.id}>
           <Link to={`/events/${event.id}`}>
             <p>{event.name}</p>
