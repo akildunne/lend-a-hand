@@ -68,7 +68,7 @@ function App() {
       <Route exact path="/create">
         <Create currentUser={currentUser} userCause={userCause} />
       </Route>
-      <Route exact path="/events/edit:id" component={Edit} />
+      <Route exact path="/events/edit/:id" component={Edit} />
       <Route exact path="/events/:id" component={EventCard} />
     </Switch>
 

@@ -24,5 +24,8 @@ export default function EventCard() {
       <p>{event.location}</p>
       <p>{event.age_group}+</p>
     </div>
+    // <Link to={`/events/edit/:id`}>
+    // <div>Edit</div>
+    // </Link>
   );
 }
