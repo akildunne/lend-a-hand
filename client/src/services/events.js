@@ -6,12 +6,13 @@ export const getAllEvents = async () => {
 }
 
 export const getOneEvent = async (id) => {
+  console.log(id)
   const resp = await api.get(`/events/${id}`);
   return resp.data;
 }
 
 export const postEvent = async (eventData) => {
-  const resp = await api.post('/eventss', {event: eventData});
+  const resp = await api.post('/events', {event: eventData});
   return resp.data;
 }
 

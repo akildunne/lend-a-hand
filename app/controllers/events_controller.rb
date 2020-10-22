@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
-  # before_action :set_event, only: [:show, :update, :destroy]
-  # before_action :authorize_request, only: [:create, :update, :destroy]
+  before_action :set_event, only: [:show, :update, :destroy]
+  before_action :authorize_request, only: [:create, :update, :destroy]
   # before_action :authorize_request, except: [:index, :show]
 
   # GET /events
@@ -49,6 +49,6 @@ class EventsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def event_params
-      params.require(:event).permit(:name, :cause, :reason, :location, :date_time, :age_group)
+      params.require(:event).permit(:name, :reason, :location, :age_group)
     end
 end
