@@ -1,23 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { getAllEvents } from "../../services/events";
+import { Link, useParams } from "react-router-dom";
+import { getOneCause } from "../../services/causes";
 
 export default function EventDashboard() {
   // const [redirect, setRedirect] = useState(false);
-  const [allEvents, setAllEvents] = useState([]);
+  const [causeById, setCauseById] = useState([]);
+  let { id } = useParams();
 
   useEffect(() => {
-    const fetchEvents = async () => {
-      const events = await getAllEvents();
-      setAllEvents(events);
+    const fetchCauseEvents = async () => {
+      const causeEvents = await getOneCause(id);
+      console.log(causeEvents)
+      setCauseById(causeEvents);
     };
-    fetchEvents();
-  }, []);
+    fetchCauseEvents();
+  }, [id]);
 
   return (
     <div>
       <h3>Events</h3>
-      {allEvents.map((event) => (
+      {causeById.map((event) => (
         <div key={event.id}>
           <Link to={`/events/${event.id}`}>
             <p>{event.name}</p>

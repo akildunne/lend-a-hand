@@ -5,13 +5,13 @@ import { getOneEvent } from "../../services/events";
 export default function EventCard() {
   // const [redirect, setRedirect] = useState(false);
   const [event, setEvent] = useState([]);
-  
+
   const { id } = useParams();
 
   useEffect(() => {
     const fetchEvent = async () => {
       const eventItem = await getOneEvent(id);
-      console.log(eventItem)
+      console.log(eventItem);
       setEvent(eventItem);
     };
     fetchEvent();
@@ -19,13 +19,15 @@ export default function EventCard() {
 
   return (
     <div>
-      <h3>{event.name}</h3>
-      <p key={event.id}>{event.reason}</p>
-      <p>{event.location}</p>
-      <p>{event.age_group}+</p>
+      <div>
+        <h3>{event.name}</h3>
+        <p key={event.id}>{event.reason}</p>
+        <p>{event.location}</p>
+        <p>{event.age_group}+</p>
+      </div>
+      <Link to={`/events/edit/:id`}>
+        <div>Edit</div>
+      </Link>
     </div>
-    // <Link to={`/events/edit/:id`}>
-    // <div>Edit</div>
-    // </Link>
   );
 }

@@ -9,6 +9,7 @@ export default function Home(props) {
   useEffect(() => {
     const fetchCauses = async () => {
       const causes = await getAllCauses();
+      console.log(causes)
       setAllCauses(causes);
     };
     fetchCauses();
