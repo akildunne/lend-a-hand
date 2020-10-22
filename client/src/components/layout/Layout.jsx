@@ -1,16 +1,17 @@
-import React from 'react'
-// import Header from '../components/Header'
+import React from 'react';
+import Header from './Header';
+import Footer from './Footer';
 
-export default function Layout() {
-  // const { currentUser, handleLogout } = props;
+export default function Layout(props) {
+  const { currentUser, handleLogout } = props;
   return (
     <div className="App">
-      <div>Hello World</div>
-      {/* <Header
+      <Header
         currentUser={currentUser}
         handleLogout={handleLogout}
       />
-      {props.children} */}
+      {props.children}
+      <Footer />
     </div>
   )
 }

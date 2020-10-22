@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './App.css';
-// import Layout from './layout/Layout';
+import Layout from './components/layout/Layout';
 import Login from "./components/screens/Login";
 import Register from "./components/screens/Register";
 import Home from "./components/screens/Home";
@@ -52,10 +52,10 @@ function App() {
   };
 
   return (
-    // <Layout
-    // currentUser={currentUser}
-    // handleLogout={handleLogout}
-    // >
+    <Layout
+    currentUser={currentUser}
+    handleLogout={handleLogout}
+    >
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/login">
@@ -68,11 +68,11 @@ function App() {
       <Route exact path="/create">
         <Create currentUser={currentUser} userCause={userCause} />
       </Route>
-      <Route exact path="/events/edit:id" component={Edit} />
+      <Route exact path="/events/edit/:id" component={Edit} />
       <Route exact path="/events/:id" component={EventCard} />
     </Switch>
 
-    // {/* </Layout> */}
+    // </Layout>
   );
 }
 

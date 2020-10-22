@@ -9,9 +9,9 @@ class CausesController < ApplicationController
   end
 
   # # GET /causes/1
-  # def show
-  #   render json: @cause
-  # end
+  def show
+    render json: @cause, include: :events
+  end
 
   # POST /causes
   def create
