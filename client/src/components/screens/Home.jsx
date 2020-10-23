@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { getAllCauses } from "../../services/causes";
 
 export default function Home(props) {
-  // const [redirect, setRedirect] = useState(false);
   const [allCauses, setAllCauses] = useState([]);
 
   useEffect(() => {
