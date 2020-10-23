@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import './App.css';
-import Layout from './components/layout/Layout';
+import "./App.css";
+import Layout from "./components/layout/Layout";
 import Login from "./components/screens/Login";
 import Register from "./components/screens/Register";
 import Home from "./components/screens/Home";
@@ -14,7 +14,7 @@ import {
   removeToken,
   verifyUser,
 } from "./services/auth";
-import { getUserCause } from './services/causes';
+import { getUserCause } from "./services/causes";
 import { Route, Switch, useHistory } from "react-router-dom";
 
 function App() {
@@ -27,8 +27,7 @@ function App() {
       const userData = await verifyUser();
       setCurrentUser(userData);
       const cause = await getUserCause();
-      console.log(cause)
-      setUserCause(cause)
+      setUserCause(cause);
     };
     handleVerify();
   }, []);
@@ -52,27 +51,23 @@ function App() {
   };
 
   return (
-    <Layout
-    currentUser={currentUser}
-    handleLogout={handleLogout}
-    >
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/login">
-        <Login handleLogin={handleLogin} />
-      </Route>
-      <Route exact path="/register">
-        <Register handleRegister={handleRegister} />
-      </Route>
-      <Route exact path="/causes/:id" component={EventDashboard}/>
-      <Route exact path="/create">
-        <Create currentUser={currentUser} userCause={userCause} />
-      </Route>
-      <Route exact path="/events/edit/:id" component={Edit} />
-      <Route exact path="/events/:id" component={EventCard} />
-    </Switch>
-
-    // </Layout>
+    <Layout currentUser={currentUser} handleLogout={handleLogout}>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/login">
+          <Login handleLogin={handleLogin} />
+        </Route>
+        <Route exact path="/register">
+          <Register handleRegister={handleRegister} />
+        </Route>
+        <Route exact path="/causes/:id" component={EventDashboard} />
+        <Route exact path="/create">
+          <Create currentUser={currentUser} userCause={userCause} />
+        </Route>
+        <Route exact path="/events/edit/:id" component={Edit} />
+        <Route exact path="/events/:id" component={EventCard} />
+      </Switch>
+    </Layout>
   );
 }
 

@@ -9,7 +9,6 @@ export default function Home(props) {
   useEffect(() => {
     const fetchCauses = async () => {
       const causes = await getAllCauses();
-      console.log(causes)
       setAllCauses(causes);
     };
     fetchCauses();
@@ -22,7 +21,7 @@ export default function Home(props) {
         {allCauses.map((cause) => (
           <div key={cause.id}>
             <Link to={`/causes/${cause.id}`}>
-              <img src={cause.image}></img>
+              <img src={cause.image} alt={cause.name}></img>
               <p>{cause.name}</p>
             </Link>
           </div>
