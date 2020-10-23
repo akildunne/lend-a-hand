@@ -10,11 +10,11 @@ const BackDiv = styled.div`
   margin-top: 20px;
 `;
 
-export default function EventDashboard() {
+export default function EventDashboard(props) {
   const [redirect, setRedirect] = useState(false);
   const [causeById, setCauseById] = useState([]);
   let { id } = useParams();
-
+  let { currentUser } = props;
 
   useEffect(() => {
     const fetchCauseEvents = async () => {
@@ -46,7 +46,12 @@ export default function EventDashboard() {
           </Link>
         </div>
       ))}
-      <Link to='/create'>Add New Event</Link>
+        <div>
+          { currentUser &&
+            (currentUser.id === causeById.user_id) ?  
+            <Link to='/create'>Add New Event</Link> : null
+          }
+          </div>
       </div>
       </div>
   );

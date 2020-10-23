@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Layout from "./components/layout/Layout";
 import Login from "./components/screens/Login";
 import Register from "./components/screens/Register";
@@ -60,12 +61,16 @@ function App() {
         <Route exact path="/register">
           <Register handleRegister={handleRegister} />
         </Route>
-        <Route exact path="/causes/:id" component={EventDashboard} />
+        <Route exact path="/causes/:id" >
+          <EventDashboard currentUser={currentUser}/>
+        </Route>
         <Route exact path="/create">
           <Create currentUser={currentUser} userCause={userCause} />
         </Route>
-        <Route exact path="/events/edit/:id" component={Edit} />
-        <Route exact path="/events/:id" component={EventCard} />
+        <Route exact path="/events/edit/:id" component={Edit} currentUser={currentUser} />
+        <Route exact path="/events/:id">
+          <EventCard currentUser={currentUser} />
+          </Route>
       </Switch>
     </Layout>
   );

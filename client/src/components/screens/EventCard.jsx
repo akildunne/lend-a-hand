@@ -3,6 +3,7 @@ import { Link, useParams, Redirect } from "react-router-dom";
 import { getOneEvent, destroyEvent } from "../../services/events";
 // import { getOneCause } from "../../services/causes";
 import BackButton from "../shared/BackButton";
+import DeleteModal from "../shared/DeleteModal";
 import styled from "styled-components";
 
 const BackDiv = styled.div`
@@ -11,12 +12,13 @@ const BackDiv = styled.div`
   margin-top: 20px;
 `;
 
-export default function EventCard() {
+export default function EventCard(props) {
   const [redirect, setRedirect] = useState(false);
   const [event, setEvent] = useState([]);
   // const [causeById, setCauseById] = useState([]);
-  const [isDeleted, setIsDeleted] = useState(false);
+  // const [isDeleted, setIsDeleted] = useState(false);
   const { id } = useParams();
+  let { currentUser } = props;
 
   useEffect(() => {
     const fetchEvent = async () => {
@@ -35,14 +37,18 @@ export default function EventCard() {
   //   fetchCauseEvents();
   // }, [id]);
 
-  const eventDeleted = async () => {
-    const deleted = await destroyEvent(id);
-    setIsDeleted(deleted);
-  };
+  // const deleteConfirmation = () => {
+  //   eventDeleted();
+  // }
 
-  if (isDeleted) {
-    // return <Redirect to="/events" />;
-  }
+  // const eventDeleted = async () => {
+  //   const deleted = await destroyEvent(id);
+  //   setIsDeleted(deleted);
+  // };
+
+  // if (isDeleted) {
+  //   // return <Redirect to="/events" />;
+  // }
 
   const goBack = (e) => {
     setRedirect(true);
@@ -54,7 +60,7 @@ export default function EventCard() {
 
   return (
     <div>
-       <BackDiv>
+      <BackDiv>
         <BackButton onClick={(e) => goBack()}></BackButton>
       </BackDiv>
       <div>
@@ -63,10 +69,15 @@ export default function EventCard() {
         <p>{event.location}</p>
         <p>{event.age_group}+</p>
       </div>
-      <Link to={`/events/edit/${event.id}`}>
-        <div>Edit</div>
-      </Link>
-      <div onClick={eventDeleted}>Delete</div>
+      <div>
+        {currentUser && currentUser.id === event.user_id ? (
+          <Link to={`/events/edit/${event.id}`}>
+            <div>Edit</div>
+          </Link>
+        ) : null}
+      </div>
+      {/* <DeleteModal onClick={handleShow}>Delete</DeleteModal> */}
+      {/* <div onClick={deleteConfirmation}>Delete</div> */}
     </div>
   );
 }

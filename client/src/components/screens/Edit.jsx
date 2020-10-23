@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getOneEvent, putEvent } from "../../services/events";
-import { useParams, Redirect } from "react-router-dom";
+import { useParams, useHistory, Redirect } from "react-router-dom";
 import BackButton from "../shared/BackButton";
 import styled from "styled-components";
 
@@ -19,14 +19,16 @@ export default function Edit(props) {
     location: "",
     age_group: "",
   });
+
+  const history = useHistory();
   let { id } = useParams();
 
   useEffect(() => {
-    const fetchEvent = async () => {
+    const fetchEvent = async (id) => {
       const eventItem = await getOneEvent(id);
       setEvent(eventItem);
     };
-    fetchEvent();
+    fetchEvent(id);
   }, [id]);
 
   const handleChange = (e) => {
@@ -39,11 +41,10 @@ export default function Edit(props) {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    let { id } = props.match.params;
-    const updated = await putEvent(id);
+  const handleSubmit = async (id, formData) => {
+    const updated = await putEvent(id, formData);
     setUpdated(updated);
+    history.push(`/events/${event.id}`)
   };
 
   const goBack = (e) => {
@@ -63,7 +64,10 @@ export default function Edit(props) {
       <BackDiv>
         <BackButton onClick={(e) => goBack()}></BackButton>
       </BackDiv>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={(e) => {
+        e.preventDefault();
+        handleSubmit(id, event)
+      }}>
         <h3>Edit Event</h3>
         <label>
           Name:
