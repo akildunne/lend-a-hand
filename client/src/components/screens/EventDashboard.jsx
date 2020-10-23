@@ -27,6 +27,7 @@ export default function EventDashboard() {
           </Link>
         </div>
       ))}
+      <Link to='/create'>Add New Event</Link>
     </div>
   );
 }

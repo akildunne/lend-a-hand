@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, Redirect } from "react-router-dom";
 import { getOneEvent, destroyEvent } from "../../services/events";
 
 export default function EventCard() {
@@ -22,6 +22,9 @@ export default function EventCard() {
     const deleted = await destroyEvent(id);
     setIsDeleted(deleted);
   };
+  if (isDeleted) {
+    return <Redirect to="/events" />;
+  }
 
   return (
     <div>
@@ -34,7 +37,7 @@ export default function EventCard() {
       <Link to={`/events/edit/${event.id}`}>
         <div>Edit</div>
       </Link>
-      {/* <button onClick=>Delete</button> */}
+      <div onClick={eventDeleted}>Delete</div>
     </div>
   );
 }
