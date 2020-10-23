@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import { Button } from 'react-bootstrap';
 import { destroyEvent } from "../../services/events";
@@ -11,21 +11,21 @@ const DeleteModal = (props) => {
   const handleShow = () => setShow(true);
   const [isDeleted, setIsDeleted] = useState(false);
   const { id } = useParams();
-
-  // const deleteConfirmation = () => {
-  //   eventDeleted();
-  // }
+  const history = useHistory();
+ 
+  
 
   const eventDeleted = async () => {
     const deleted = await destroyEvent(id);
     setIsDeleted(deleted);
+    history.push('/')
   };
 
   return (
     <>
-      {/* <Button variant="primary" onClick={handleShow}>
+      <Button variant="primary" onClick={handleShow}>
         Delete
-      </Button> */}
+      </Button>
 
       <Modal
         show={show}

@@ -67,7 +67,7 @@ export default function EventCard(props) {
         <h3>{event.name}</h3>
         <p key={event.id}>{event.reason}</p>
         <p>{event.location}</p>
-        <p>{event.age_group}+</p>
+        <p>{event.age_group}</p>
       </div>
       <div>
         {currentUser && currentUser.id === event.user_id ? (
@@ -76,8 +76,11 @@ export default function EventCard(props) {
           </Link>
         ) : null}
       </div>
-      {/* <DeleteModal onClick={handleShow}>Delete</DeleteModal> */}
-      {/* <div onClick={deleteConfirmation}>Delete</div> */}
+      <div>
+        {currentUser && currentUser.id === event.user_id ? (
+          <DeleteModal />
+        ) : null}
+        </div>
     </div>
   );
 }
