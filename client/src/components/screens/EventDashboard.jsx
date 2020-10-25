@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams, Redirect } from "react-router-dom";
 import { getOneCause } from "../../services/causes";
 import BackButton from "../shared/BackButton";
+// import Layout from "../../layout/Layout";
 import styled from "styled-components";
 
 const BackDiv = styled.div`
@@ -43,6 +44,8 @@ export default function EventDashboard(props) {
         <div key={event.id}>
           <Link to={`/events/${event.id}`}>
             <p>{event.name}</p>
+            <p>{event.date}</p>
+            <p>View Event Details</p>
           </Link>
         </div>
       ))}
