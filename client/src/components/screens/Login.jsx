@@ -1,5 +1,33 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import styled from "styled-components";
+
+const Form = styled.form`
+  display: flex;
+  justify-content: center;
+
+`;
+
+const LoginTitle = styled.h3`
+  display: flex;
+  justify-content: center;
+`;
+
+const LabelContainer = styled.label`
+
+`;
+
+const InputContainer = styled.input`
+
+`;
+
+const RegisterContainer = styled.div`
+
+`;
+
+const LoginButton = styled.button`
+
+`;
 
 export default function Login(props) {
   const [formData, setFormData] = useState({
@@ -19,35 +47,37 @@ export default function Login(props) {
   }
 
   return (
-    <form onSubmit={(e)=>{
+    <Form onSubmit={(e)=>{
       e.preventDefault();
       handleLogin(formData);
     }}>
-      <h3>Login</h3>
+      <LoginTitle>Login</LoginTitle>
       {
         error &&
         <p>{error}</p>
       }
-      <label>
+      <LabelContainer>
         Username:
-        <input
+        <InputContainer
           type="text"
           value={username}
           name="username"
           onChange={handleChange}
         />
-      </label>
-      <label>
+      </LabelContainer>
+      <LabelContainer>
         Password:
-        <input
+        <InputContainer
           type="password"
           value={password}
           name="password"
           onChange={handleChange}
         />
-      </label>
-      <Link to='/register'>Register</Link>
-      <button>Login</button>
-    </form>
+      </LabelContainer>
+      <RegisterContainer>
+        <Link to='/register'>Register</Link>
+        </RegisterContainer>
+      <LoginButton>Login</LoginButton>
+    </Form>
   )
 }

@@ -3,7 +3,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import { Button } from 'react-bootstrap';
 import { destroyEvent } from "../../services/events";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import styled from "styled-components";
 
 
 const DeleteModal = (props) => {
@@ -13,8 +13,6 @@ const DeleteModal = (props) => {
   const [isDeleted, setIsDeleted] = useState(false);
   const { id } = useParams();
   const history = useHistory();
- 
-  
 
   const eventDeleted = async () => {
     const deleted = await destroyEvent(id);

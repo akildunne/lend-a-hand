@@ -37,6 +37,7 @@ const CauseNameContainer = styled.div`
 const CauseName = styled.div`
   display: flex;
   justify-content: center;
+  text-decoration: none;
 `;
 
 export default function Home(props) {
