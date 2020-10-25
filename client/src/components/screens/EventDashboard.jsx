@@ -1,23 +1,42 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, Redirect } from "react-router-dom";
 import { getOneCause } from "../../services/causes";
+import BackButton from "../shared/BackButton";
+import styled from "styled-components";
 
-export default function EventDashboard() {
-  // const [redirect, setRedirect] = useState(false);
+const BackDiv = styled.div`
+  display: flex;
+  padding-left: 36px;
+  margin-top: 20px;
+`;
+
+export default function EventDashboard(props) {
+  const [redirect, setRedirect] = useState(false);
   const [causeById, setCauseById] = useState([]);
   let { id } = useParams();
-  console.log(id)
+  let { currentUser } = props;
 
   useEffect(() => {
-    const fetchCauseEvents = async (id) => {
+    const fetchCauseEvents = async () => {
       const causeEvents = await getOneCause(id);
       setCauseById(causeEvents);
     };
     fetchCauseEvents();
-    console.log(id)
   }, [id]);
 
+  const goBack = (e) => {
+    setRedirect(true);
+  };
+
+  if (redirect === true) {
+    return <Redirect to={`/`} />;
+  }
+
   return (
+    <div>
+       <BackDiv>
+        <BackButton onClick={(e) => goBack()}></BackButton>
+      </BackDiv>
     <div>
       <h3>Events</h3>
       {causeById.length !== 0 && causeById.events.map((event) => (
@@ -27,6 +46,13 @@ export default function EventDashboard() {
           </Link>
         </div>
       ))}
-    </div>
+        <div>
+          { currentUser &&
+            (currentUser.id === causeById.user_id) ?  
+            <Link to='/create'>Add New Event</Link> : null
+          }
+          </div>
+      </div>
+      </div>
   );
 }

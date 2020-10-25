@@ -18,12 +18,12 @@ Event.destroy_all
 @crp_user = User.create!(username: 'CRP Admin', email: 'crpadmin@email.com', password: '123456')
 
 
-@blm = Cause.create!(name: 'Black Lives Matter', image: 'https://images.app.goo.gl/TeKbYG7XPHKnayZa6', user: @blm_user)
-@hrc = Cause.create!(name: 'Human Rights Campagin', image: 'https://images.app.goo.gl/2AoSxWruZGTq7UMRA', user: @hrc_user)
-@pp = Cause.create!(name: 'Planned Parenthood', image: 'https://images.app.goo.gl/SLVYaP8z1K1cSKmZ7', user: @pp_user)
-@et = Cause.create!(name: 'Everytown for Gun Safety', image: 'https://images.app.goo.gl/GFs2NxM4Kar3f3sp6', user: @et_user)
-@sc = Cause.create!(name: 'Street Children', image: 'https://images.app.goo.gl/PC4btRebRYJzN4wn9', user: @sc_user)
-@crp = Cause.create!(name: 'Climate Reality Project', image: 'https://images.app.goo.gl/NzYTyhRazTfRW1S68', user: @crp_user)
+@blm = Cause.create!(name: 'Black Lives Matter', image: 'https://i.imgur.com/c93PVWh.png', user: @blm_user)
+@hrc = Cause.create!(name: 'Human Rights Campagin', image: 'https://i.imgur.com/WZ0DG5U.png', user: @hrc_user)
+@pp = Cause.create!(name: 'Planned Parenthood', image: 'https://i.imgur.com/jasYUU0.png', user: @pp_user)
+@et = Cause.create!(name: 'Everytown for Gun Safety', image: 'https://i.imgur.com/0ixrxkR.png', user: @et_user)
+@sc = Cause.create!(name: 'Street Children', image: 'https://i.imgur.com/lFUPPHG.png', user: @sc_user)
+@crp = Cause.create!(name: 'Climate Reality Project', image: 'https://i.imgur.com/FMvV1uV.png', user: @crp_user)
 
 
 @unity_march = Event.create!(name: 'Unity March', reason: 'Support in San Jose', location: 'SAP Center, San Jose', age_group: '18+', cause: @blm, user: @blm_user)
