@@ -8,6 +8,7 @@ const CauseContainer = styled.div`
   text-decoration: none;
   justify-content: center;
   flex-direction: column;
+  margin: 30px;
 
   :hover {
     transform: scale(1.1);
@@ -17,6 +18,7 @@ const CauseContainer = styled.div`
 const ImageContainer = styled.div`
 display: flex;
 justify-content: center;
+margin: 10px;
 `;
 
 const Image = styled.img`
@@ -29,6 +31,7 @@ const Image = styled.img`
 const CauseNameContainer = styled.div`
   display: flex;
   justify-content: center;
+  margin: 10px;
 `;
 
 const CauseName = styled.div`
