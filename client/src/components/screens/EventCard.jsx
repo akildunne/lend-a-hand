@@ -65,6 +65,7 @@ export default function EventCard(props) {
       </BackDiv>
       <div>
         <h3>{event.name}</h3>
+        <img src={event.image} alt={event.name}></img>
         <p key={event.id}>{event.reason}</p>
         <p>{event.location}</p>
         <p>{event.age_group}</p>
