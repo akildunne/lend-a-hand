@@ -13,8 +13,6 @@ const DeleteModal = (props) => {
   const [isDeleted, setIsDeleted] = useState(false);
   const { id } = useParams();
   const history = useHistory();
- 
-  
 
   const eventDeleted = async () => {
     const deleted = await destroyEvent(id);
