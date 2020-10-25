@@ -9,6 +9,7 @@ import EventDashboard from "./components/screens/EventDashboard";
 import EventCard from "./components/screens/EventCard";
 import Create from "./components/screens/Create";
 import Edit from "./components/screens/Edit";
+import Calendar from "./components/screens/Calendar";
 import {
   loginUser,
   registerUser,
@@ -70,7 +71,10 @@ function App() {
         <Route exact path="/events/edit/:id" component={Edit} currentUser={currentUser} />
         <Route exact path="/events/:id">
           <EventCard currentUser={currentUser} />
-          </Route>
+        </Route>
+        <Route exact path="/calendar">
+          <Calendar/>
+        </Route>
       </Switch>
     </Layout>
   );

@@ -8,10 +8,6 @@ const Form = styled.form`
 
 `;
 
-const LoginTitle = styled.h3`
-  display: flex;
-  justify-content: center;
-`;
 
 const LabelContainer = styled.label`
 
@@ -51,7 +47,6 @@ export default function Login(props) {
       e.preventDefault();
       handleLogin(formData);
     }}>
-      <LoginTitle>Login</LoginTitle>
       {
         error &&
         <p>{error}</p>

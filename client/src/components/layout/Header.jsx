@@ -1,12 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+const Title = styled.h1`
+  // font-family: brandon-grotesque, sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 35px;
+`;
 
 export default function Header(props) {
   const { currentUser, handleLogout } = props;
 
   return (
     <div>
-     <h1>LEND A HAND <i className="fas fa-heart"></i> <i className="fas fa-hands"></i> </h1>
+     <Title>LEND A HAND</Title>
       {
         currentUser ?
           <>
@@ -16,14 +24,6 @@ export default function Header(props) {
           :
           <Link to='/login'>Login</Link>
       }
-      {/* <hr />
-      {
-        currentUser &&
-        <>
-          <Link to='/foods'>Foods</Link>
-          <Link to='/flavors'>Flavors</Link>
-        </>
-      } */}
     </div>
   )
 }
