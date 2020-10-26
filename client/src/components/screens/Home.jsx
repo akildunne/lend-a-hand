@@ -45,7 +45,7 @@ const CauseContainer = styled.div`
 
     // @media (max-width: 800px) {
     //   padding: 22px 0;
-    //   margin: 25px;
+    //   margin: 45px;
     // }
     // @media (max-width: 1300px) {
     //   padding: 22px 0;
@@ -72,14 +72,17 @@ const Image = styled.img`
   height: 45px;
   width: 92px;
 
-    // @media (max-width: 800px) {
-    //   height: 65px;
-    //   width: 112;
-    // }
-    // @media (max-width: 1440px) {
-    //   height: 85px;
-    //   width: 132;
-    // }
+  @media only screen and (min-device-width: 768px) 
+    and (max-device-width: 1024px) 
+    and (orientation: portrait) 
+    and (-webkit-min-device-pixel-ratio: 1)  {
+      height: 65px;
+      width: 112;
+    }
+    @media (min-device-width: 1440px) {
+      height: 85px;
+      width: 132;
+    }
 `;
 
 const CauseNameContainer = styled.div`
