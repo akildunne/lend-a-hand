@@ -13,10 +13,10 @@ const HeaderContainer = styled.div`
   padding-top: 15px;
 
   @media (max-width: 800px) {
-    // height: 500px;
+    height: 270px;
   }
   @media (max-width: 1300px) {
-    // height: 400px;
+    height: 400px;
   }
 `;
 

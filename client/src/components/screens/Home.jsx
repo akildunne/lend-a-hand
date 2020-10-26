@@ -44,10 +44,12 @@ const CauseContainer = styled.div`
   }
 
   @media (max-width: 800px) {
-    
+    padding: 22px 0;
+    margin: 25px;
   }
   @media (max-width: 1300px) {
-    
+    padding: 22px 0;
+    margin: 25px;
   }
 `;
 
@@ -84,10 +86,10 @@ const CauseNameContainer = styled.div`
   margin: 10px;
 
   @media (max-width: 800px) {
-    
+    width: 300px;
   }
   @media (max-width: 1300px) {
-    
+    width: 500px;
   }
 `;
 
