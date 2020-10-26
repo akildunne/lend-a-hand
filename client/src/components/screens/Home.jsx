@@ -36,7 +36,7 @@ const CauseContainer = styled.div`
   background-color: #FFFFFF;
   border-radius: 18px;
   box-shadow: 0 3px 6px #00000029;
-  padding: 12px;
+  padding: 12px 0;
   margin: 15px;
 
   :hover {
@@ -67,9 +67,8 @@ const ImageContainer = styled.div`
 const Image = styled.img`
   display: flex;
   justify-content: center;
-  height: 25px;
-  width: 52px;
-  // padding: 20px;
+  height: 45px;
+  width: 92px;
 
   @media (max-width: 800px) {
     

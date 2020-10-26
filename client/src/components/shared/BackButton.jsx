@@ -4,8 +4,8 @@ import styled from 'styled-components';
 const Button = styled.div`
   display: flex;
   text-decoration: none;
-  color: #000000;
-  font-size: 25px;
+  color: #2E348C;
+  font-size: 20px;
   margin: 0;
 
   :hover {
@@ -15,7 +15,7 @@ const Button = styled.div`
 
 const BackButton = (props) => {
   return (
-    <Button onClick={props.onClick}><i className="fas fa-arrow-alt-circle-left"></i></Button>
+    <Button onClick={props.onClick}><i className="fas fa-chevron-left"></i></Button>
   )
 }
 

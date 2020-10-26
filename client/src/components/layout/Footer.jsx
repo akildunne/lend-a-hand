@@ -11,7 +11,6 @@ const FooterContainer = styled.div`
   border-radius: 15px 15px 0 0;
   height: 68px;
   width: 100%;
-  position: absolute;
 `;
 
 const HomeButton = styled.div``;
