@@ -10,26 +10,75 @@ const BackDiv = styled.div`
   margin-top: 20px;
 `;
 
-const EventContainer = styled.div`
-  align-items: flex-start;
-`
 
 const EventsCauseTitle = styled.div`
   display: flex;
   padding: 22px 22px 0 22px;
-  align-content: flex-start;
+  justify-content: flex-start;
 `;
 
+const EventContainer = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  text-decoration: none;
+  // justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: #FFFFFF;
+  border-radius: 18px;
+  box-shadow: 0 3px 6px #00000029;
+  padding: 12px 5px;
+  margin: 15px;
+
+  :hover {
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 800px) {
+    
+  }
+  @media (max-width: 1300px) {
+    
+  }
+`
+
 const EventTitle = styled.div`
-  align-content: flex-start;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 12px;
+
+  @media (max-width: 800px) {
+    
+  }
+  @media (max-width: 1300px) {
+    
+  }
 `;
 
 const EventDate = styled.div`
-  align-content: flex-start;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 12px;
+
+  @media (max-width: 800px) {
+    
+  }
+  @media (max-width: 1300px) {
+    
+  }
 `;
 
 const EventDetailsButton = styled.div`
-  align-content: flex-start;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 12px;
+
+  @media (max-width: 800px) {
+    
+  }
+  @media (max-width: 1300px) {
+    
+  }
 `;
 
 export default function EventDashboard(props) {
