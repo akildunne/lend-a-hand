@@ -3,12 +3,27 @@ import { Link } from "react-router-dom";
 import { getAllCauses } from "../../services/causes";
 import styled from "styled-components";
 
+const BodyComponent = styled.div`
+  background-color: #9ADCF7;
+  height: 100%;
+  width: 100%;
+`;
+
+const HomeTitle = styled.div`
+  padding: 22px 22px 0 22px;
+`
+
 const CauseContainer = styled.div`
   display: flex;
   text-decoration: none;
   justify-content: center;
-  flex-direction: column;
-  margin: 30px;
+  align-items: center;
+  flex-direction: row;
+  background-color: #FFFFFF;
+  border-radius: 18px;
+  box-shadow: 0 3px #00000029;
+  padding: 12px;
+  margin: 15px;
 
   :hover {
     transform: scale(1.1);
@@ -16,21 +31,22 @@ const CauseContainer = styled.div`
 `;
 
 const ImageContainer = styled.div`
-display: flex;
-justify-content: center;
-margin: 10px;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
 `;
 
 const Image = styled.img`
   display: flex;
   justify-content: center;
-  height: 165px;
-  width: 300px;
+  height: 25px;
+  width: 52px;
+  // padding: 20px;
 `;
 
 const CauseNameContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   margin: 10px;
 `;
 
@@ -53,8 +69,8 @@ export default function Home(props) {
 
   return (
     <div>
-      <div>
-        <h3>Organizations to Support</h3>
+      <BodyComponent>
+        <HomeTitle style={{ color: "#2E348C", fontSize:"20px", fontWeight:"bold"}}>ORGANIZATIONS TO SUPPORT</HomeTitle>
         {allCauses.map((cause) => (
           <div key={cause.id}>
             <Link to={`/causes/${cause.id}`}>
@@ -63,13 +79,13 @@ export default function Home(props) {
                   <Image src={cause.image} alt={cause.name}></Image>
                 </ImageContainer>
                 <CauseNameContainer>
-                  <CauseName>{cause.name}</CauseName>
+                  <CauseName style={{ color: "#333333", fontSize: "20px", fontWeight: "bold"}}>{cause.name}</CauseName>
                 </CauseNameContainer>
               </CauseContainer>
             </Link>
           </div>
         ))}
-      </div>
+      </BodyComponent>
     </div>
   );
 }
