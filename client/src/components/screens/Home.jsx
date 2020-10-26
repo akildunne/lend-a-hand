@@ -7,10 +7,24 @@ const BodyComponent = styled.div`
   background-color: #9ADCF7;
   height: 100%;
   width: 100%;
+
+  @media (max-width: 800px) {
+    
+  }
+  @media (max-width: 1300px) {
+    
+  }
 `;
 
 const HomeTitle = styled.div`
   padding: 22px 22px 0 22px;
+
+  @media (max-width: 800px) {
+    
+  }
+  @media (max-width: 1300px) {
+    
+  }
 `
 
 const CauseContainer = styled.div`
@@ -21,12 +35,19 @@ const CauseContainer = styled.div`
   flex-direction: row;
   background-color: #FFFFFF;
   border-radius: 18px;
-  box-shadow: 0 3px #00000029;
+  box-shadow: 0 3px 6px #00000029;
   padding: 12px;
   margin: 15px;
 
   :hover {
     transform: scale(1.1);
+  }
+
+  @media (max-width: 800px) {
+    
+  }
+  @media (max-width: 1300px) {
+    
   }
 `;
 
@@ -34,6 +55,13 @@ const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
   margin: 10px;
+
+  @media (max-width: 800px) {
+    
+  }
+  @media (max-width: 1300px) {
+    
+  }
 `;
 
 const Image = styled.img`
@@ -42,18 +70,39 @@ const Image = styled.img`
   height: 25px;
   width: 52px;
   // padding: 20px;
+
+  @media (max-width: 800px) {
+    
+  }
+  @media (max-width: 1300px) {
+    
+  }
 `;
 
 const CauseNameContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   margin: 10px;
+
+  @media (max-width: 800px) {
+    
+  }
+  @media (max-width: 1300px) {
+    
+  }
 `;
 
 const CauseName = styled.div`
   display: flex;
   justify-content: center;
   text-decoration: none;
+
+  @media (max-width: 800px) {
+    
+  }
+  @media (max-width: 1300px) {
+    
+  }
 `;
 
 export default function Home(props) {
