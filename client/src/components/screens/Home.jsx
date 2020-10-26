@@ -43,14 +43,14 @@ const CauseContainer = styled.div`
     transform: scale(1.1);
   }
 
-  @media (max-width: 800px) {
-    padding: 22px 0;
-    margin: 25px;
-  }
-  @media (max-width: 1300px) {
-    padding: 22px 0;
-    margin: 25px;
-  }
+    // @media (max-width: 800px) {
+    //   padding: 22px 0;
+    //   margin: 25px;
+    // }
+    // @media (max-width: 1300px) {
+    //   padding: 22px 0;
+    //   margin: 25px;
+    // }
 `;
 
 const ImageContainer = styled.div`
@@ -72,12 +72,14 @@ const Image = styled.img`
   height: 45px;
   width: 92px;
 
-  @media (max-width: 800px) {
-    
-  }
-  @media (max-width: 1300px) {
-    
-  }
+    // @media (max-width: 800px) {
+    //   height: 65px;
+    //   width: 112;
+    // }
+    // @media (max-width: 1440px) {
+    //   height: 85px;
+    //   width: 132;
+    // }
 `;
 
 const CauseNameContainer = styled.div`
@@ -85,12 +87,12 @@ const CauseNameContainer = styled.div`
   justify-content: flex-start;
   margin: 10px;
 
-  @media (max-width: 800px) {
-    width: 300px;
-  }
-  @media (max-width: 1300px) {
-    width: 500px;
-  }
+  // @media (max-width: 800px) {
+  //   width: 300px;
+  // }
+  // @media (max-width: 1300px) {
+  //   width: 500px;
+  // }
 `;
 
 const CauseName = styled.div`

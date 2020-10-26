@@ -12,12 +12,12 @@ const HeaderContainer = styled.div`
   width: 100%;
   padding-top: 15px;
 
-  @media (max-width: 800px) {
-    height: 270px;
-  }
-  @media (max-width: 1300px) {
-    height: 400px;
-  }
+    // @media (max-width: 800px) {
+    //   height: 270px;
+    // }
+    // @media (max-width: 1300px) {
+    //   height: 400px;
+    // }
 `;
 
 const HeaderContent = styled.div`
