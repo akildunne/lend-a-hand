@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams, Redirect } from "react-router-dom";
+import { Link, useParams, Redirect, useHistory } from "react-router-dom";
 import { getOneEvent, destroyEvent } from "../../services/events";
 // import { getOneCause } from "../../services/causes";
 import BackButton from "../shared/BackButton";
@@ -12,13 +12,19 @@ const BackDiv = styled.div`
   margin-top: 20px;
 `;
 
+const DeleteButton = styled.button`
+
+`;
+
 export default function EventCard(props) {
   const [redirect, setRedirect] = useState(false);
   const [event, setEvent] = useState([]);
+  const [isDeleted, setIsDeleted] = useState(false);
   // const [causeById, setCauseById] = useState([]);
   // const [isDeleted, setIsDeleted] = useState(false);
   const { id } = useParams();
   let { currentUser } = props;
+  const history = useHistory();
 
   useEffect(() => {
     const fetchEvent = async () => {
@@ -41,14 +47,15 @@ export default function EventCard(props) {
   //   eventDeleted();
   // }
 
-  // const eventDeleted = async () => {
-  //   const deleted = await destroyEvent(id);
-  //   setIsDeleted(deleted);
-  // };
+  const eventDeleted = async () => {
+    const deleted = await destroyEvent(id);
+    setIsDeleted(deleted);
+    history.push('/')
+  };
 
-  // if (isDeleted) {
-  //   // return <Redirect to="/events" />;
-  // }
+  if (isDeleted) {
+    // return <Redirect to="/events" />;
+  }
 
   const goBack = (e) => {
     setRedirect(true);
@@ -80,6 +87,7 @@ export default function EventCard(props) {
       <div>
         {currentUser && currentUser.id === event.user_id ? (
           <DeleteModal />
+          // <DeleteButton onClick={eventDeleted}/>
         ) : null}
         </div>
     </div>

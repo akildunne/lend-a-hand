@@ -69,10 +69,10 @@ export default function Login(props) {
           onChange={handleChange}
         />
       </LabelContainer>
+      <LoginButton>Login</LoginButton>
       <RegisterContainer>
         <Link to='/register'>Register</Link>
         </RegisterContainer>
-      <LoginButton>Login</LoginButton>
     </Form>
   )
 }
