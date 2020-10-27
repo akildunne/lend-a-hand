@@ -1,6 +1,4 @@
-@import url(https://use.typekit.net/jvy1gir.css);
-
-body {
+* {
   text-decoration: none !important;
   font-family: 'brandon-grotesque', sans-serif !important;
 }
@@ -11,5 +9,10 @@ body {
 
 .App div h1 {
   font-family: 'brandon-grotesque', sans-serif;
+}
+
+body {
+  background-color: #9ADCF7;
+  height: 700px;
 }
 

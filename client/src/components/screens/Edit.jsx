@@ -80,11 +80,11 @@ export default function Edit(props) {
           />
         </label>
         <label>
-          Reason:
+          Date:
           <input
             type="text"
             name="reason"
-            value={event.reason}
+            value={event.date}
             onChange={handleChange}
           />
         </label>
@@ -103,6 +103,15 @@ export default function Edit(props) {
             type="text"
             name="age_group"
             value={event.age_group}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Description:
+          <input
+            type="text"
+            name="reason"
+            value={event.reason}
             onChange={handleChange}
           />
         </label>
