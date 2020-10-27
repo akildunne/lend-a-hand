@@ -19,11 +19,11 @@ const BodyComponent = styled.div`
 const HomeTitle = styled.div`
   padding: 22px 22px 0 22px;
 
-  @media (max-width: 800px) {
-    
+  @media only screen and (min-device-width: 768px) {
+    padding: 32px 32px 0 32px;
   }
-  @media (max-width: 1300px) {
-    
+  @media (min-device-width: 1300px) {
+    padding: 42px 42px 0 42px;
   }
 `
 
@@ -43,14 +43,15 @@ const CauseContainer = styled.div`
     transform: scale(1.1);
   }
 
-    // @media (max-width: 800px) {
-    //   padding: 22px 0;
-    //   margin: 45px;
-    // }
-    // @media (max-width: 1300px) {
-    //   padding: 22px 0;
-    //   margin: 25px;
-    // }
+    @media only screen and (min-device-width: 768px){
+      padding: 22px 0;
+      margin: 25px 135px;;
+    }
+    @media (min-device-width: 1300px) {
+      flex-flow: row-wrap;
+      padding: 42px 0;
+      margin: 25px; 205px;
+    }
 `;
 
 const ImageContainer = styled.div`
@@ -58,12 +59,12 @@ const ImageContainer = styled.div`
   justify-content: center;
   margin: 10px;
 
-  @media (max-width: 800px) {
+  // @media only screen and (min-device-width: 768px) {
     
-  }
-  @media (max-width: 1300px) {
+  // }
+  // @media (min-device-width: 1300px) {
     
-  }
+  // }
 `;
 
 const Image = styled.img`
@@ -72,14 +73,11 @@ const Image = styled.img`
   height: 45px;
   width: 92px;
 
-  @media only screen and (min-device-width: 768px) 
-    and (max-device-width: 1024px) 
-    and (orientation: portrait) 
-    and (-webkit-min-device-pixel-ratio: 1)  {
+  @media only screen and (min-device-width: 768px)  {
       height: 65px;
       width: 112;
     }
-    @media (min-device-width: 1440px) {
+    @media (min-device-width: 1300px) {
       height: 85px;
       width: 132;
     }
